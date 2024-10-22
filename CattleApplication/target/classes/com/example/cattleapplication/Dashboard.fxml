@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.cattleapplication.DashboardController">
+    <Label text="Welcome to the Cattle Management System Dashboard" layoutX="50" layoutY="30" style="-fx-font-size: 18px;" />
+
+    <!-- Add buttons for various dashboard functionalities -->
+
+    <Button fx:id="registerCattleButton" layoutX="50" layoutY="80" onAction="#handleRegisterCattle" text="Register Cattle" />
+
+    <Button text="View Cattle" layoutX="200" layoutY="80" onAction="#handleViewCattle" />
+    <Button text="Submit Insurance Claim" layoutX="50" layoutY="130" onAction="#handleSubmitClaim" />
+    <Button text="View Insurance Status" layoutX="200" layoutY="130" onAction="#handleViewInsuranceStatus" />
+    <Button text="Logout" layoutX="150" layoutY="180" onAction="#handleLogout" />
+</AnchorPane>
