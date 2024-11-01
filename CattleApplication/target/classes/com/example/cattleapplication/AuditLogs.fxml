@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.cattleapplication.AuditLogsController">
+    <TableView fx:id="auditLogsTable">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" />
+            <TableColumn fx:id="actionColumn" text="Action" />
+            <TableColumn fx:id="userIdColumn" text="User ID" />
+            <TableColumn fx:id="timestampColumn" text="Timestamp" />
+        </columns>
+    </TableView>
+    <Button fx:id="backButton" text="Back" onAction="#goBackToDashboard" layoutX="10" layoutY="300"/>
+</AnchorPane>
