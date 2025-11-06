@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.Node;
 import javafx.stage.Stage;
-import javafx.event.ActionEvent; // Import ActionEvent
+import javafx.event.ActionEvent; 
 
 import java.io.IOException;
 
@@ -26,11 +26,11 @@ public class AdminDashboardController {
             FXMLLoader fxmlLoader = new FXMLLoader(CattleApplication.class.getResource(fxmlFileName));
             Scene scene = new Scene(fxmlLoader.load());
 
-            // Get the current stage from the source node (button)
+            
             Stage stage = (Stage) source.getScene().getWindow();
             stage.setScene(scene);
             stage.setTitle(title);
-            stage.show(); // Show the new scene
+            stage.show(); 
         } catch (IOException e) {
             e.printStackTrace();
         }
