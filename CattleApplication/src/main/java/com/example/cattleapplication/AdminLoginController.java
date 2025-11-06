@@ -23,7 +23,7 @@ public class AdminLoginController {
     private PasswordField adminPasswordField;
 
     @FXML
-    private Label adminErrorLabel;  // To display admin login errors
+    private Label adminErrorLabel;  
 
     // Admin login method
     @FXML
@@ -31,7 +31,7 @@ public class AdminLoginController {
         String username = adminUsernameField.getText().trim();
         String password = adminPasswordField.getText();
 
-        // Input validation
+        
         if (username.isEmpty() || password.isEmpty()) {
             adminErrorLabel.setText("Username and password cannot be empty.");
             return;
@@ -39,7 +39,7 @@ public class AdminLoginController {
 
         if (authenticateAdmin(username, password)) {
             System.out.println("Admin login successful!");
-            loadAdminDashboard();  // Load the admin dashboard upon successful login
+            loadAdminDashboard();  
         } else {
             adminErrorLabel.setText("Invalid admin credentials.");
         }
@@ -50,12 +50,12 @@ public class AdminLoginController {
         try (Connection conn = DatabaseUtil.connect();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
             pstmt.setString(1, username);
-            pstmt.setString(2, password); // Be cautious with plain text passwords
+            pstmt.setString(2, password); 
 
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
                     String adminId = rs.getString("username");
-                    UserSession.setCurrentUser(username, adminId);  // Set admin session
+                    UserSession.setCurrentUser(username, adminId);  
                     return true;
                 }
             }
